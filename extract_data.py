@@ -23,7 +23,9 @@ def extract_data(filename):
         content.append(temp)
 
     # 获取需求边，保存格式为（v1,v2) : demand
-    for i in range(9, len(content)-1):
+    for i in range(9, len(content)):
+        if content[i] == 'END':
+            break
         if content[i][3] != '0':
             v1 = int(content[i][0])
             v2 = int(content[i][1])
